@@ -1,0 +1,347 @@
+:root {
+    /* Cores do sistema */
+    --cor-texto: #333333;
+    --cor-texto-suave: #666666;
+    --cor-fundo-claro: #307dd6;
+    --cor-botao: #1a65ac;
+
+    /* Cores das classificações de risco (Manchester) */
+    --cor-vermelho: #FF0000;
+    --cor-laranja: #FF8C00;
+    --cor-amarelo: #FFD700;
+    --cor-verde: #00B050;
+    --cor-azul: #0066CC;
+
+    /* Cores do status */
+    --cor-fora-fundo: #FDE0E0;
+    --cor-fora-texto: #C62828;
+    --cor-dentro-fundo: #E3F5E6;
+    --cor-dentro-texto: #2E7D32;
+}
+
+/* ---------- Geral ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--cor-texto);
+    background-color: #FFFFFF;
+}
+
+.estrutura {
+    display: flex;
+    min-height: 100vh;
+}
+
+.pagina {
+    flex: 1;
+    min-width: 0;
+    max-width: 1200px;
+    padding: 40px 64px;
+    background-color: #c3dbff;
+    margin-bottom: 150px;
+    border-radius: 15px;
+}
+
+/* ---------- Menu lateral ---------- */
+ 
+.menu-lateral {
+    width: 240px;
+    padding: 32px 16px;
+    background-color: var(--cor-fundo-claro);
+    border-right: 1px solid #E0E0DA;
+    /* Mantém o menu visível enquanto a página rola */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-shrink: 0;
+}
+ 
+.menu-marca {
+    text-align: center;
+    margin-bottom: 32px;
+}
+ 
+/* Espaço reservado para a logo */
+.menu-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--cor-texto-suave);
+    background-color: #bfe0ffcb;
+    
+    border-radius: 12px;
+}
+ 
+.menu-nome {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+hr{
+    color: #0066ccb7;
+    margin-bottom: 25px;
+}
+ 
+.menu-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+ 
+.menu-botao {
+    display: block;
+    padding: 12px 16px;
+    font-size: 15px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    border-radius: 8px;
+}
+ 
+.menu-botao:hover {
+    background-color: #73acec;
+}
+ 
+/* Botão da página em que o usuário está */
+.menu-botao-ativo {
+    color: #FFFFFF;
+    background-color: var(--cor-botao);
+}
+ 
+.menu-botao-ativo:hover {
+    background-color: var(--cor-botao);
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-left-color: #0066CC;
+    
+}
+
+.cabecalho-titulos{
+    padding: 20px 190px 40px 50px;
+    border-left: 20px;
+    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.titulo-sistema {
+    margin: 0;
+    font-size: 32px;
+}
+
+.subtitulo-sistema {
+    margin: 4px 0 0 0;
+    font-size: 18px;
+    color: var(--cor-texto-suave);
+}
+
+.usuario-logado {
+    margin: 0;
+    padding: 12px 18px;
+    font-size: 12px;
+    background-color: var(--cor-fundo-claro);
+    border-radius: 8px;
+}
+
+/* ---------- Cartões de resumo ---------- */
+
+.resumo {
+    display: flex;
+    gap: 22px;
+    margin-top: 48px;
+}
+
+.cartao-resumo {
+    flex: 1;
+    padding: 28px 16px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 12px;
+}
+
+.cartao-laranja {
+    background-color: var(--cor-laranja);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-vermelho {
+    background-color: var(--cor-vermelho);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-titulo {
+    margin: 0;
+    font-size: 16px;
+}
+
+.cartao-numero {
+    margin: 4px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cartao-descricao {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* ---------- Fila geral ---------- */
+
+.fila-geral {
+    margin-top: 20px;
+}
+
+.fila-titulo {
+    margin: 0;
+    font-size: 16px;
+    
+}
+
+.fila-explicacao {
+    margin: 4px 0 16px 0;
+    font-size: 11px;
+    color: var(--cor-texto-suave);
+}
+
+/* Faz a tabela rolar de lado em telas pequenas */
+.area-tabela {
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    background-color: #FFFFFF;
+}
+
+.tabela-fila {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.tabela-fila th {
+    padding: 11px 10px;
+    text-align: left;
+    font-size: 11px;
+    background-color: var(--cor-fundo-claro);
+}
+
+/* Cantos arredondados no início e no fim do cabeçalho da tabela */
+.tabela-fila th:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.tabela-fila th:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.tabela-fila td {
+    padding: 8px 10px;
+}
+
+/* Largura de cada coluna */
+.coluna-paciente      { width: 25%; }
+.coluna-idade         { width: 7%; }
+.coluna-classificacao { width: 25%; }
+.coluna-meta          { width: 10%; }
+.coluna-aguardando    { width: 13%; }
+.coluna-status        { width: 20%; }
+
+/* ---------- Etiquetas de classificação ---------- */
+
+.etiqueta {
+    display: inline-block;
+    width: 128px;
+    padding: 6px 0;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.etiqueta-emergencia   { background-color: var(--cor-vermelho); }
+.etiqueta-muito-urgente { background-color: var(--cor-laranja); }
+.etiqueta-urgente      { background-color: var(--cor-amarelo); color: var(--cor-texto); }
+.etiqueta-pouco-urgente { background-color: var(--cor-verde); }
+.etiqueta-nao-urgente  { background-color: var(--cor-azul); }
+
+
+
+/* ---------- Botão nova triagem ---------- */
+
+.rodape-acao {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.botao-nova-triagem {
+    width: 255px;
+    padding: 14px 0;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: var(--cor-botao);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.botao-nova-triagem:hover {
+    opacity: 0.88;
+}
+
+.rodape-texto {
+    margin: 0;
+    font-size: 11px;
+    color: var(--cor-texto-suave);
+}
+
+/* ==========================================================
+   CELULAR E TABLET (telas com até 700px de largura)
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .pagina {
+        padding: 24px 16px;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+    }
+
+    .resumo {
+        flex-direction: column;
+        margin-top: 28px;
+    }
+
+    .rodape-acao {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .botao-nova-triagem {
+        width: 100%;
+    }
+}
